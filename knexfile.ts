@@ -11,10 +11,14 @@ import config from './src/config/config';
  */
 const env = process.env.NODE_ENV;
 let db_conn
+if (env === 'test') {
+    db_conn = config.mysql.connection.test;
+}
 if (env === 'dev') {
     db_conn = config.mysql.connection.dev;
-} else {
-    db_conn = config.mysql.connection.test
+}
+else {
+    db_conn = config.mysql.connection.prod
 }
 module.exports = {
     client: 'mysql',
