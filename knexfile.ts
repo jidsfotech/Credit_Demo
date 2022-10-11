@@ -25,7 +25,6 @@ module.exports = {
     connection: db_conn,
     migrations: {
         tableName: 'migrations',
-        directory: 'migrations'
     },
     seeds: {
         directory: './seeds'
